@@ -1,0 +1,154 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title>转盘抽奖</title>
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript">
+            var step = [
+                ['c1',0],
+                ['c1', 500],
+                ['c2', 400],
+                ['c3', 300],
+                ['c4', 200],
+                ['c5', 200],
+                ['c6', 200],
+                ['c7', 200],
+                ['c8', 200],
+                ['c1', 100],
+                ['c2', 100],
+                ['c3', 100],
+                ['c4', 100],
+                ['c5', 100],
+                ['c6', 100],
+                ['c7', 100],
+                ['c8', 100],
+                ['c1', 100],
+                ['c2', 100],
+                ['c3', 100],
+                ['c4', 100],
+                ['c5', 100],
+                ['c6', 100],
+                ['c7', 100],
+                ['c8', 100],
+                ['c1', 100],
+                ['c2', 100],
+                ['c3', 100],
+                ['c4', 100],
+                ['c5', 100],
+                ['c6', 100],
+                ['c7', 100],
+                ['c8', 100],
+                ['c1', 100],
+                ['c2', 200],
+                ['c3', 300],
+                ['c4', 300],
+                ['c5', 300],
+                ['c6', 300],
+                ['c7', 300],
+                ['c8', 300],
+                ['c1', 400],
+                ['c2', 400],
+                ['c3', 400],
+                ['c4', 400],
+                ['c5', 400],
+                ['c6', 400],
+                ['c7', 400],
+                ['c8', 400]
+            ];
+            //
+            var current = 1;
+            var data;
+            var total = 8;
+            var msg = "";
+
+        function run() {
+            $('#' + step[current - 1][0]).removeClass('cur');
+            $('#' + step[current][0]).addClass('cur');
+
+            if (step.length - current + data == total) {
+                alert(msg);
+                window.location.reload();
+            } else {
+                setTimeout('run()',step[current][1]);
+                current++;
+            }
+        }
+
+        function start() {
+                $.ajax({
+                    url:"http://localhost/phpProject/zhuanpan/index.php",
+                    type:"GET",
+                    dataType:"json",
+                    success: function (d) {
+                        msg = d[0];
+                        data = d[1];
+                        run();
+                    }
+                });
+        }
+        </script>
+    </head>
+    <body>
+    <style>
+        div {
+            margin: 100px auto 0px;/*居中*/
+            height: 250px;
+            width: 500px;
+            border: 3px solid black;
+            /*align-content: center;*/
+        }
+
+        li {
+            /*顺序很重要*/
+            height: 59px;
+            width: 129px;
+            border: 3px solid black;
+            float: left;
+            margin: 8px 0px 0px 8px;
+            list-style: none;  /*列表序号隐藏*/
+
+        }
+
+        .btn {
+            border: 3px solid red;
+            cursor: pointer;
+        }
+
+        .cur {
+            border:3px solid red;
+        }
+    </style>
+        <div>
+                <ul>
+                    <li id="c1">
+                        <img src="images/img1.jpg">
+                    </li>
+                    <li id="c2">
+                        <img src="images/img2.jpg">
+                    </li>
+                    <li id="c3">
+                        <img src="images/img3.jpg">
+                    </li>
+                    <li id="c8">
+                        <img src="images/img4.jpg">
+                    </li>
+                    <li class="btn">
+                        <img src="images/btn.jpg" onclick="start()">
+                    </li>
+                    <li id="c4">
+                        <img src="images/img1.jpg">
+                    </li>
+                    <li id="c7">
+                        <img src="images/img2.jpg">
+                    </li>
+                    <li id="c6">
+                        <img src="images/img3.jpg">
+                    </li>
+                    <li id="c5">
+                        <img src="images/img4.jpg">
+                    </li>
+                </ul>
+        </div>
+    </body>
+</html>

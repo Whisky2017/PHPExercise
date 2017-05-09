@@ -1,0 +1,111 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+.back{
+    width: 80%;
+    height: 820px;
+    background-color: cadetblue;
+    margin: 0px auto;/*居中*/
+}
+.header{
+    background-color: darkcyan;
+    width: 100% ;
+    height:100px;
+    position: relative;
+}
+.headertitle{
+    float: left;
+    font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 30px;
+    margin-top: 30px;
+    color: azure;
+}
+.headerleading{
+
+}
+ul {
+    list-style: none;/*去除点号*/
+    float: left;
+    margin-top: 60px;
+    margin-left: 10px;
+    padding-left: 5px;
+
+}
+li {
+    /*水平排列，垂直排列为block*/
+    padding:2px;
+    display: inline;
+}
+a:link,a{
+    color: snow;
+    text-align: center;
+    padding:2px;
+    /*去除下划线*/
+    text-decoration: none;
+}
+a:hover{
+    color: black;
+}
+.headerimg {
+    float: right;
+    margin-top: 30px;
+    margin-right: 5px;
+}
+.headerimg img{
+    width: 60px;
+    height:60px;
+}
+.headerform form{
+    float: right;
+    /*height: 26px;*/
+    /*margin-top: 30px;*/
+    margin-right: 50px;
+}
+form input{
+    height: 20px;
+    background-color: cadetblue;
+    width: 100px;
+    margin-top: 50px;
+    /*边框设置为圆角*/
+    border-radius: 30px;
+}
+
+.body{
+    margin: 20px 10px;
+}
+.bodytitle{
+    color: snow;
+}
+.bodytitle p{
+    margin: 20px;
+}
+
+.img1,.img2,.img3,.img4{
+    border:2px solid lightgray;
+    float: left;
+    text-align: center;
+    margin: 5px 5px;
+}
+.img1 img,.img2 img,.img3 img,.img4 img{
+    width: 250px;
+    height:220px;
+}
+.img1 p,.img2 p,.img3 p,.img4 p{
+    color: snow;
+    font-size: 20px;
+}
+
+.footer{
+    height: 50px;
+    width: 80%;
+    padding-top: 20px;
+    text-align: center;
+    background-color: lightgray;
+    color: darkslategray;
+    margin: 0px auto;
+
+}
+
+
+
